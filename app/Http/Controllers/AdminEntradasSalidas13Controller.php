@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminEntradasSalidasController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminEntradasSalidas13Controller extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -29,14 +29,15 @@
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
-			$this->col = [];
-			$this->col[] = ["label"=>"Codigo","name"=>"Codigo"];
-			$this->col[] = ["label"=>"Edicion","name"=>"Edicion"];
-			$this->col[] = ["label"=>"Fecha Validez","name"=>"Fecha_validez"];
-			$this->col[] = ["label"=>"Reservado Gerencia","name"=>"reservado_gerencia"];
-			$this->col[] = ["label"=>"Fecha","name"=>"fecha"];
-			$this->col[] = ["label"=>"Ubicacion Equipo","name"=>"Ubicacion_equipo"];
-			$this->col[] = ["label"=>"Tipo Movimiento","name"=>"tipo_movimiento"];
+	        $this->col = [];
+			$this->col[] = array("label"=>"Codigo","name"=>"Codigo" );
+		$this->col[] = array("label"=>"Edicion","name"=>"Edicion" );
+		$this->col[] = array("label"=>"Fecha Validez","name"=>"Fecha_validez" );
+		$this->col[] = array("label"=>"Reservado Gerencia","name"=>"reservado_gerencia" );
+		$this->col[] = array("label"=>"Fecha","name"=>"fecha" );
+		$this->col[] = array("label"=>"Ubicacion Equipo","name"=>"Ubicacion_equipo" );
+		$this->col[] = array("label"=>"Tipo Movimiento","name"=>"tipo_movimiento" );
+
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -47,17 +48,17 @@
 			$this->form[] = ['label'=>'Reservado Gerencia','name'=>'reservado_gerencia','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Fecha','name'=>'fecha','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Ubicacion Equipo','name'=>'Ubicacion_equipo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Tipo Movimiento','name'=>'tipo_movimiento','type'=>'number','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tipo Movimiento','name'=>'tipo_movimiento','type'=>'number','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Descripcion Equipo','name'=>'descripcion_equipo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Marca','name'=>'marca','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Modelo','name'=>'modelo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Serie','name'=>'serie','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Nuevo','name'=>'Nuevo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Usado Buen Estado','name'=>'usado_buen_estado','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Danado','name'=>'danado','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Dañado','name'=>'danado','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Diagnostico U Observaciones','name'=>'Diagnostico_u_observaciones','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Movimiento Desde','name'=>'movimiento_desde','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Movimiento Hasta','name'=>'movimiento_hasta','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Movimiento Hasta','name'=>'movimiento_hasta','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Movimiento Indefinido','name'=>'movimiento_indefinido','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Persona Que Entrega','name'=>'persona_que_entrega','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Entregado Firma','name'=>'entregado_firma','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
@@ -67,28 +68,28 @@
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Codigo','name'=>'Codigo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Edicion','name'=>'Edicion','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Fecha Validez','name'=>'Fecha_validez','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Reservado Gerencia','name'=>'reservado_gerencia','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Fecha','name'=>'fecha','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Ubicacion Equipo','name'=>'Ubicacion_equipo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Tipo Movimiento','name'=>'tipo_movimiento','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Descripcion Equipo','name'=>'descripcion_equipo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Marca','name'=>'marca','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Modelo','name'=>'modelo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Serie','name'=>'serie','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Nuevo','name'=>'Nuevo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Usado Buen Estado','name'=>'usado_buen_estado','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Danado','name'=>'danado','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Diagnostico U Observaciones','name'=>'Diagnostico_u_observaciones','type'=>'textarea','validation'=>'required|string|min:5|max:5000','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Movimiento Desde','name'=>'movimiento_desde','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Movimiento Hasta','name'=>'movimiento_hasta','type'=>'date','validation'=>'da','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Movimiento Indefinido','name'=>'movimiento_indefinido','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Persona Que Entrega','name'=>'persona_que_entrega','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Entregado Firma','name'=>'entregado_firma','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Persona Que Recibe','name'=>'persona_que_recibe','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Recibido Firma','name'=>'recibido_firma','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ["label"=>"Codigo","name"=>"Codigo","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Edicion","name"=>"Edicion","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
+			//$this->form[] = ["label"=>"Fecha Validez","name"=>"Fecha_validez","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+			//$this->form[] = ["label"=>"Reservado Gerencia","name"=>"reservado_gerencia","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
+			//$this->form[] = ["label"=>"Fecha","name"=>"fecha","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+			//$this->form[] = ["label"=>"Ubicacion Equipo","name"=>"Ubicacion_equipo","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Tipo Movimiento","name"=>"tipo_movimiento","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Descripcion Equipo","name"=>"descripcion_equipo","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Marca","name"=>"marca","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Modelo","name"=>"modelo","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Serie","name"=>"serie","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Nuevo","name"=>"Nuevo","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Usado Buen Estado","name"=>"usado_buen_estado","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Danado","name"=>"danado","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Diagnostico U Observaciones","name"=>"Diagnostico_u_observaciones","type"=>"textarea","required"=>TRUE,"validation"=>"required|string|min:5|max:5000"];
+			//$this->form[] = ["label"=>"Movimiento Desde","name"=>"movimiento_desde","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+			//$this->form[] = ["label"=>"Movimiento Hasta","name"=>"movimiento_hasta","type"=>"date","required"=>TRUE,"validation"=>"required|date"];
+			//$this->form[] = ["label"=>"Movimiento Indefinido","name"=>"movimiento_indefinido","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Persona Que Entrega","name"=>"persona_que_entrega","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Entregado Firma","name"=>"entregado_firma","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Persona Que Recibe","name"=>"persona_que_recibe","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Recibido Firma","name"=>"recibido_firma","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
 			# OLD END FORM
 
 			/* 

@@ -21,7 +21,7 @@ class CreateEntradasSalidasTable extends Migration
             $table->longText('reservado_gerencia');
             $table->date('fecha');
             $table->string('Ubicacion_equipo');
-            $table->string('tipo_movimiento');
+            $table->integer('tipo_movimiento');
             $table->string('descripcion_equipo');
             $table->string('marca');
             $table->string('modelo');
@@ -38,7 +38,6 @@ class CreateEntradasSalidasTable extends Migration
             $table->string('persona_que_recibe');
             $table->boolean('recibido_firma');
             $table->timestamps();
-
         });
     }
 
